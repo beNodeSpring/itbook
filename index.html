@@ -61,10 +61,9 @@
 				<!-- Online Option -->
 				<div class="online-option">
 					<ul>
-						<li><a href="#">online store</a></li>
-						<li><a href="#">Payment</a></li>
-						<li><a href="#">shipping</a></li>
-						<li><a href="#">Return</a></li>
+						<li><a href="#">결제</a></li>
+						<li><a href="#">배송</a></li>
+						<li><a href="#">환불</a></li>
 					</ul>
 				</div>
 				<!-- Online Option -->
@@ -104,12 +103,6 @@
 						<a href="index.html"><img src="images/logo-1.png" alt=""></a>
 					</div>
 					<!-- Logo -->
-
-					<!-- Search bar -->
-					<div class="search-bar">
-						<a href="#"><i class="fa fa-search"></i></a>
-					</div>
-					<!-- Search bar -->
 
 					<!-- Responsive Button -->
 					<div class="responsive-btn">
@@ -245,22 +238,64 @@
 		</nav>
 		<!-- Nav -->
 		
-		<!-- 추가 검색바 -->
 		<style>
+		/*추가 검색바*/
 		.cf:after{display: block; content: ''; display: block;}
 		.search_bar{box-sizing: border-box; margin: 10px auto;}
 		.sch_bar{width:92% !important; float: left; box-sizing: border-box;border: 2px solid #ff851d !important;}
-		.sch_btn{width: 8%; float: right; box-sizing: border-box;   color: #ffffff; background-color: #1e293d}
+		.sch_btn{width: 8%; height: 48px; float: right; box-sizing: border-box;   color: #ffffff; background-color: #1e293d}
 		.sch_btn:hover{color: #ff851d;}
+		/*좌측 플로팅 메뉴*/
+		.lft_floating_menu{position: fixed; left: 0; z-index: 10;}
+		.lft_floating_menu .lfm_wrap{position: relative;}
+		.lft_floating_menu .lfm_wrap li{margin-bottom: 6px; padding: 10px; width: 67px; text-align: center; border: 1px solid #e4e4e4; background-color: rgba(255, 255, 255, 0.5);}
+		.lft_floating_menu .lfm_wrap li:nth-child(n+2):hover{border: 1px solid #ff851d;}
+		.lft_floating_menu .lfm_wrap li strong{ color: #1e293d; font-size: 12px;}
+		.lft_floating_menu .lfm_wrap li a{display: inline-block;}
+		.lft_floating_menu .lfm_wrap .btn_tog{position: absolute; right: -20px; font-weight: 800; bottom: 0px; width: 20px; height: 20px;}
+		.isShow{left: 0; transition: left 0.5s}
+		.isHide{left: -67px; transition: left 0.75s}
+		.switcher{display: none;}
+		@media all and (max-width:1200px) {
+		.lft_floating_menu{display: none;}
+		}
 		</style>
+		<!-- 추가 검색바 -->
 		<div class="container search_bar cf">
 			<input type="text" class="sch_bar" >
-			<input type="button" class="sch_btn" value="검색">
+			<button class="sch_btn" id="" title="검색"><i class="fa fa-search"></i></button>
 		</div>
 		<!-- 추가 검색바 -->
 
-		<!--BANNER-->
-		<!--BANNER-->
+		<!--좌측 플로팅 메뉴-->
+		<div class="lft_floating_menu">
+			<div class="lfm_wrap">
+				<ul>
+					<li><strong>최근에 본 상품</strong></li>
+					<li><a href="#"><img src="images/upcoming-release/thumb/img-01.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/upcoming-release/thumb/img-02.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/upcoming-release/thumb/img-03.jpg" alt=""></a></li>
+				</ul>
+				<button id="btnTog" class="btn_tog">X</button>
+			</div>
+		</div>
+		<script>
+		(function(){
+			var	btnTog = document.getElementById("btnTog");
+			var isToggle = true;
+			btnTog.addEventListener('click', function(){
+				var target = document.querySelector('.lft_floating_menu');
+				if(isToggle){
+					target.setAttribute('class','lft_floating_menu isHide');
+				}else{
+					target.setAttribute('class','lft_floating_menu isShow');
+				}
+				isToggle = !isToggle;
+			});
+		}());
+		</script>
+		<!--좌측 플로팅 메뉴-->
+
 		<!-- Recomend products -->
 		<div class="recomended-products tc-padding">
 			<div class="container">
@@ -402,7 +437,7 @@
 						<ul id="release-thumb" class="release-thumb">
 							<li>
 								<a data-slide-index="0" href="">
-									<span>Summer</span>
+									<span>Python</span>
 									<img src="images/upcoming-release/thumb/img-01.jpg" alt="">
 									<img class="b-shadow" src="images/upcoming-release/b-shadow.png" alt="">
 									<span data-toggle="modal" data-target="#quick-view" class="plus-icon">+</span>
@@ -410,7 +445,7 @@
 							</li>
 							<li>
 								<a data-slide-index="1" href="" class="active">
-									<span>Ramdan</span>
+									<span>Oracle</span>
 									<img src="images/upcoming-release/thumb/img-02.jpg" alt="">
 									<img class="b-shadow" src="images/upcoming-release/b-shadow.png" alt="">
 									<span data-toggle="modal" data-target="#quick-view" class="plus-icon">+</span>
@@ -418,7 +453,7 @@
 							</li>
 							<li> 
 								<a data-slide-index="2" href="">
-									<span>Rcok</span>
+									<span>Python</span>
 									<img src="images/upcoming-release/thumb/img-03.jpg" alt="">
 									<img class="b-shadow" src="images/upcoming-release/b-shadow.png" alt="">
 									<span data-toggle="modal" data-target="#quick-view" class="plus-icon">+</span>
@@ -426,7 +461,7 @@
 							</li>
 							<li>
 								<a data-slide-index="3" href="">
-									<span>Cover</span>
+									<span>기획/설계</span>
 									<img src="images/upcoming-release/thumb/img-04.jpg" alt="">
 									<img class="b-shadow" src="images/upcoming-release/b-shadow.png" alt="">
 									<span data-toggle="modal" data-target="#quick-view" class="plus-icon">+</span>
@@ -434,7 +469,7 @@
 							</li>
 							<li>
 								<a data-slide-index="4" href="">
-									<span>Festa</span>
+									<span>교양</span>
 									<img src="images/upcoming-release/thumb/img-05.jpg" alt="">
 									<img class="b-shadow" src="images/upcoming-release/b-shadow.png" alt="">
 									<span data-toggle="modal" data-target="#quick-view" class="plus-icon">+</span>
@@ -466,20 +501,17 @@
 							<div class="sidebar">
 								<h4>분야별 도서</h4>
 								<ul>
-									<li><a href="#">파이썬</a></li>
-									<li><a href="#">Satire</a></li>
-									<li><a href="#">Drama</a></li>
-									<li><a href="#">Action and Adventure</a></li>
-									<li><a href="#">Self help</a></li>
-									<li><a href="#">Health</a></li>
-									<li><a href="#">Guide</a></li>
-									<li><a href="#">Religion, Spirituality &amp; New Age</a></li>
-									<li><a href="#">Encyclopedias</a></li>
-									<li><a href="#">Dictionaries</a></li>
-									<li><a href="#">Cookbooks</a></li>
-									<li><a href="#">Autobiographies</a></li>
-									<li><a href="#">Biographies</a></li>
-									<li><a href="#">Fantasy</a></li>
+									<li><a href="#">Python</a></li>
+									<li><a href="#">Javascript</a></li>
+									<li><a href="#">Java</a></li>
+									<li><a href="#">c#</a></li>
+									<li><a href="#">c/c++</a></li>
+									<li><a href="#">Oracle</a></li>
+									<li><a href="#">MySQL/Maria DB</a></li>
+									<li><a href="#">MsSQL</a></li>
+									<li><a href="#">웹디자인</a></li>
+									<li><a href="#">기획/설계</a></li>
+									<li><a href="#">IT교양</a></li>
 								</ul>
 							</div>
 						</div>
@@ -510,8 +542,8 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">Ramadan Kareem</a></h6>
-												<span>Richard Matherson</span>
+												<h6><a href="book-detail.html">파이썬 실무 프로그래밍</a></h6>
+												<!-- <span>Richard Matherson</span> -->
 											</div>
 										</li>
 										<li>
@@ -525,8 +557,7 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">Mars Club</a></h6>
-												<span>Eden Lepucki</span>
+												<h6><a href="book-detail.html">파이썬 웹 프로그래밍</a></h6>
 											</div>
 										</li>
 										<li>
@@ -540,8 +571,7 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">Festa Junnai</a></h6>
-												<span>George R.R. Martin</span>
+												<h6><a href="book-detail.html">파이썬 웹 프랙티스</a></h6>
 											</div>
 										</li>
 										<li>
@@ -555,8 +585,7 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">Beer Fsstivak</a></h6>
-												<span>Micheal Circhton</span>
+												<h6><a href="book-detail.html">파이썬 웹 프로그래밍</a></h6>
 											</div>
 										</li>
 										<li>
@@ -570,8 +599,7 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">Rock Festival</a></h6>
-												<span>Richard Matherson</span>
+												<h6><a href="book-detail.html">빠르게 활용하는 파이썬 3.2 프로그래밍</a></h6>
 											</div>
 										</li>
 										<li>
@@ -585,8 +613,7 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">Summer Festival</a></h6>
-												<span>Edgar Rice Burroghs</span>
+												<h6><a href="book-detail.html">파이썬 알고리즘 트레이딩</a></h6>
 											</div>
 										</li>
 										<li>
@@ -600,8 +627,7 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">Festa JUnnai</a></h6>
-												<span>Max Brooks</span>
+												<h6><a href="book-detail.html">머신러닝, 딥러닐 실전개발 입문</a></h6>
 											</div>
 										</li>
 										<li>
@@ -615,8 +641,7 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">Summer Festival</a></h6>
-												<span>J.R.R. Tolkien</span>
+												<h6><a href="book-detail.html">러닝스쿨 파이썬 교과서</a></h6>
 											</div>
 										</li>
 										<li>
@@ -630,8 +655,7 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">New Year Collection</a></h6>
-												<span>Henry Rollins</span>
+												<h6><a href="book-detail.html">파이썬 3.6 프로그래밍</a></h6>
 											</div>
 										</li>
 										<li>
@@ -645,8 +669,7 @@
 														</div>
 													</div>
 												</div>
-												<h6><a href="book-detail.html">Happy Halloween</a></h6>
-												<span>Lily King</span>
+												<h6><a href="book-detail.html">파이썬 케라스 강화학습</a></h6>
 											</div>
 										</li>
 									</ul>
@@ -741,10 +764,6 @@
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
 			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-01.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
-			    						</div>
 			    					</div>
 			    				</div>
 			    			</div>
@@ -769,7 +788,6 @@
 			    					<div class="product-detail">
 			    						<span>IT교양</span>
 			    						<h5><a href="book-detail.html">미래를 바꾼 9가지 알고리즘</a></h5>
-			    						<p></p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -779,10 +797,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-02.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -803,7 +817,6 @@
 			    					<div class="product-detail">
 			    						<span>etc</span>
 			    						<h5><a href="book-detail.html">elastic search in action</a></h5>
-			    						<p></p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -813,10 +826,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-03.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -838,7 +847,6 @@
 			    					<div class="product-detail">
 			    						<span>운영체제</span>
 			    						<h5><a href="book-detail.html">windows internal</a></h5>
-			    						<p></p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -848,10 +856,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-04.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -881,7 +885,6 @@
 			    					<div class="product-detail">
 			    						<span>Novel</span>
 			    						<h5><a href="book-detail.html">Rebel Spring</a></h5>
-			    						<p>How to Write a Book Review...</p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -891,10 +894,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-01.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -915,7 +914,6 @@
 			    					<div class="product-detail">
 			    						<span>Novel</span>
 			    						<h5><a href="book-detail.html">Slow Travel</a></h5>
-			    						<p>How to Write a Book Review...</p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -925,10 +923,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-02.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -954,7 +948,6 @@
 			    					<div class="product-detail">
 			    						<span>Novel</span>
 			    						<h5><a href="book-detail.html">Trial by Fire</a></h5>
-			    						<p>How to Write a Book Review...</p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -964,10 +957,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-03.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -988,7 +977,6 @@
 			    					<div class="product-detail">
 			    						<span>Novel</span>
 			    						<h5><a href="book-detail.html">Jewels of Nizam</a></h5>
-			    						<p>How to Write a Book Review...</p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -998,10 +986,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-04.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -1031,7 +1015,6 @@
 			    					<div class="product-detail">
 			    						<span>Novel</span>
 			    						<h5><a href="book-detail.html">Jewels of Nizam</a></h5>
-			    						<p>How to Write a Book Review...</p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -1041,10 +1024,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-01.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -1071,7 +1050,6 @@
 			    					<div class="product-detail">
 			    						<span>Novel</span>
 			    						<h5><a href="book-detail.html">Trial by Fire</a></h5>
-			    						<p>How to Write a Book Review...</p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -1081,10 +1059,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-02.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -1105,7 +1079,6 @@
 			    					<div class="product-detail">
 			    						<span>Novel</span>
 			    						<h5><a href="book-detail.html">Slow Travel</a></h5>
-			    						<p>How to Write a Book Review...</p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -1115,10 +1088,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-03.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -1139,7 +1108,6 @@
 			    					<div class="product-detail">
 			    						<span>Novel</span>
 			    						<h5><a href="book-detail.html">Rebel Spring</a></h5>
-			    						<p>How to Write a Book Review...</p>
 			    						<div class="rating-nd-price">
 			    							<strong>$280.99</strong>
 			    							<ul class="rating-stars">
@@ -1149,10 +1117,6 @@
 			    								<li><i class="fa fa-star"></i></li>
 			    								<li><i class="fa fa-star-half-o"></i></li>
 			    							</ul>
-			    						</div>
-			    						<div class="aurthor-detail">
-			    							<span><img src="images/book-aurthor/img-04.jpg" alt="">Pawel Kadysz</span>
-			    							<a class="add-wish" href="#"><i class="fa fa-heart"></i></a>
 			    						</div>
 			    					</div>
 			    				</div>
@@ -1554,9 +1518,12 @@
 		    		<!-- Footer Column -->
 		    		<div class="col-lg-4 col-sm-6">
 		    			<div class="footer-column logo-column">
-		    				<a href="index-1.html"><img src="images/logo-2.png" alt=""></a>
-		    				<p>Find out how to prepare your book for an editor with these 4 writing tips! The editing process can be a wonderful opportunity for writers.</p>
-
+							<a href="index-1.html"><img src="images/logo-2.png" alt=""></a>
+							<ul class="footer_txt">
+								<li>(주) ITBook</li>
+								<li>대표이사 : 김종민</li>
+								<li>사업자번호: 213-546-879</li>
+							</ul>
 		    			</div>
 		    		</div>
 		    		<!-- Footer Column -->
@@ -1571,9 +1538,9 @@
 									<li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
 								</ul>							
 							<ul class="address-list">
-								<li><i class="fa fa-home"></i>888 South Avenue Street, New York City.</li>
+								<li><i class="fa fa-home"></i>413-756 경기도 파주시 문발동 535-6</li>
 								<li><i class="fa fa-phone"></i>00+123-456-789</li>
-								<li><i class="fa fa-envelope"></i>contact@onlinbookshops.com</li>
+								<li><i class="fa fa-envelope"></i>contact@itbooks.com</li>
 							</ul>							
 						</div>
 					</div>
@@ -1581,13 +1548,13 @@
 
 					<!-- Footer Column -->
 					<div class="col-lg-4 col-sm-6">
-						<div class="footer-column newsletter">
-							<h4>Weekly Newsletter</h4>
-							<p>Get our awesome releases and latest updates with exclusive news and offers in your inbox.</p>
+						<div class="footer-column newsletter logo-column">
+							<h4>뉴스레터</h4>
+							<p>각종 이벤트와 유용한 소식들을 전해드립니다.<br> 뉴스레터 구독자에게 제공되는 각종 쿠폰과 혜택들도 놓치지마세요</p>
 							<form class="newsletter-input">
 								<i class="fa fa-envelope-o"></i>
-								<input class="form-control.newsletter" type="text" placeholder="Enter Your Email">
-								<button>SUBSCRIBE</button>
+								<input class="form-control.newsletter" type="text" placeholder="이메일주소를 입력해주세요">
+								<button>제출</button>
 							</form>
 						</div>
 					</div>
@@ -1605,7 +1572,7 @@
 	   		<div class="container">
 	   			<div class="row">
 		   			<div class="col-sm-6">
-		   				<p>Copyright <i class="fa fa-copyright"></i> 2005-2016 <span class="theme-color">FineLayers</span> All Rights Reserved.</p>
+		   				<p>Copyright <i class="fa fa-copyright"></i> 2005-2016 <span class="theme-color">ITbook</span> All Rights Reserved.</p>
 		   			</div>
 		   			<div class="col-sm-6">
 		   				<a class="back-top" href="#">Back to Top<i class="fa fa-caret-up"></i></a>
