@@ -287,8 +287,10 @@
 				var target = document.querySelector('.lft_floating_menu');
 				if(isToggle){
 					target.setAttribute('class','lft_floating_menu isHide');
+					this.innerText = "O";
 				}else{
 					target.setAttribute('class','lft_floating_menu isShow');
+					this.innerText = "X";
 				}
 				isToggle = !isToggle;
 			});
