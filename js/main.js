@@ -74,6 +74,9 @@ jQuery( document ).ready(function( $ ) {
             nav:true,
             dots: false,
             smartSpeed:600,
+            autoplay:true,
+            autoplayTimeout:2000,
+            autoplayHoverPause:true,
             responsiveClass:true,
             responsive:{
                 0:{ items:1},

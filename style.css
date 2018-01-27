@@ -289,14 +289,12 @@ box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.39);}
 .topbar{ background: #1e293d; padding: 15px 0;}
 
 /* Online Option */
-.online-option{ float: left;}
-.online-option ul li{ float: left;}
-.online-option ul li::before{ content: "\f111"; float: left; color: #fff; font-family: fontawesome; font-size: 4px; margin: 5px 10px 0 10px;} 
-.online-option ul li:first-child::before{ display: none;}
-.online-option ul li a{ color: #fff; font-size: 11px; text-transform: uppercase; float: left;}
+.online-option{ float: right; height: 22px;}
+.online-option ul li{text-align: right; display: none;}
+.online-option ul li a{ color: #fff; font-size: 16px; }
 
 /* Cart Option */
-.cart-option{ float: right; margin: 0 30px 0 0;}
+.cart-option{ float: left; margin: 0 30px 0 0;}
 .cart-option ul li{ float: left; margin: 0 0 0 30px; text-transform: uppercase;}
 .cart-option ul li:first-child{ margin: 0;}
 .cart-option ul li a{ color: #fff; font-size: 12px;}
@@ -442,7 +440,7 @@ left: 100%; width: 32px; height: 21px;}
 .release-book-detail .detail h5{ font-size: 18px; font-weight: bold; margin: 0 0 10px;}
 .release-book-detail .detail p{ margin: 0 0 10px;}
 .release-book-detail .detail{ font-size: 28px; font-weight: bold; margin: 30px 0 0;}
-.release-book-detail .detail-img{ float: right;}
+.release-book-detail .detail-img{ float: right; margin-top: 30px;}
 .release-book-detail .detail-img img{ border-radius: 4px;}
 .bx-wrapper{ margin: 0;}
 .release-book-detail i{ float: right; color: #fff; position: absolute; right: 0; bottom: 0;}
@@ -631,11 +629,10 @@ background: #1e293d; text-align: center; color: #fff; font-size: 25px; border-ra
 -webkit-box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.67);
 -moz-box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.67);
 box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.67);}
+
 .s-related-products{ float: right; margin: 44px 0 0;}
-.s-related-products li:first-child{ margin: 0;}
-.s-related-products li{ float: left; margin: 0 0 0 15px; text-align: center;}
-.s-related-products li img{ margin: 0 0 15px;}
-.s-related-products li h6{ color: #fff; font-size: 12px; margin: 0;}
+
+
 .text-box h5{ color: #fff; font-size: 12px; font-style: italic;}
 .text-box h5 span{ font-style: normal; font-size: 16px;}
 .timeline-area .text-box { float: left; width: 100%;}
@@ -656,7 +653,7 @@ box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.67);}
 border-radius: 100%; left: 50%; margin: -6px 0 0 -7px; border: 6px solid transparent;}
 #dates .selected::before{ border-color: #fff; height: 25px; width: 25px; margin: -10px 0 0 -10px;}
 #issues{ overflow: hidden;}
-#issues > li{ list-style: none; float: left;}
+#issues > li{ list-style: none; float: left; width: 100%; max-width: 1140px; padding: 0;}
 
 /* Blog and Gallery */
 .latest-section h2 { margin: 0;}
@@ -744,7 +741,7 @@ height: 26px; line-height: 24px; width: 26px; font-size: 14px; color: #fff;}
 .footer-ad-banner{ text-align: center; margin: 0 0 35px;}
 .logo-column{ padding: 0!important;}
 .logo-column a{ margin: 0 0 30px;}
-.logo-column p{ color: #b5b5b5;}
+.logo-column li{ margin-bottom: 10px; color: #b5b5b5;}
 .address-list li{ margin: 0 0 15px; color: #b5b5b5;}
 .address-list li:last-child{ margin: 0; }
 .address-list li i{ height: 30px; line-height: 30px; width: 30px; text-align: center; border-radius: 100%;
